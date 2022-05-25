@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BountyHunt bh = new BountyHunt("src/input.txt");
-        int result = bh.getMinDroids();
+        BountyHunt bountyHunt = new BountyHunt("src/B/input.txt");
+        int result = bountyHunt.getMinDroids();
         System.out.println(result);
     }
 }
