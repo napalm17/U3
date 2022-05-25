@@ -1,8 +1,15 @@
 package A;
 
 public class Playlist {
-    public void add(int id, String artist, String title, int length, int priority) {
+    private ArrayList trackList;
 
+    public Playlist() {
+        this.trackList = new ArrayList();
+    }
+
+    public void add(int id, String artist, String title, int length, int priority) {
+        Track track = new Track(id, artist, title, length, priority);
+        trackList.insert(track);
     }
 
     public int remove(int id) {
