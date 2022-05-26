@@ -31,17 +31,38 @@ class ArrayList {
             c = c.next;
         }
         c.next = new ListCell(track, null);
-        System.out.println(c);
 
     }
     public Track getByIndex(int i) {
         ListCell c = this.head;
         int j = 0;
-        while (j != i) {
+        while (c != null) {
+            if (i == j) {
+                break;
+            }
             c = c.next;
             j++;
         }
         return c.content;
+    }
+    public int remove(int id) {
+        ListCell c = this.head;
+        while (c != null && c.content.getId() == id) {
+            this.head = c = c.next;
+            this.size--;
+        }
+        if (c == null) {
+            return 0; // nothing more to do
+        }
+        while (c.next != null) {
+            if (c.next.content.getId() == id) {
+                c.next = c.next.next;
+                this.size--;
+            } else {
+                c = c.next;
+            }
+        }
+        return 0;
     }
     public int getSize() {
         return this.size;

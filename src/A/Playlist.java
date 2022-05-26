@@ -1,11 +1,12 @@
 package A;
 
 public class Playlist {
+    private Track currentTrack;
     private int size;
     private ArrayList[] trackList;
 
     public Playlist() {
-        this.trackList = new ArrayList[5];
+        this.trackList = new ArrayList[6];
         for (int i = 0; i < trackList.length; i++) {
             trackList[i] = new ArrayList();
         }
@@ -20,11 +21,25 @@ public class Playlist {
     }
 
     public int remove(int id) {
-        return -1;
+        for (ArrayList tracks : trackList) {
+            for (int i = 0; i < tracks.getSize(); i++) {
+                if (tracks.getByIndex(i).getId() == id) {
+                    tracks.remove(id);
+                    System.out.println("removed");
+                    break;
+                }
+            }
+        }
+        return 0;
     }
 
     public void play(int length) {
-
+        for (ArrayList tracks : trackList) {
+            for (int i = 0; i < tracks.getSize(); i++) {
+                    break;
+                }
+            }
+        }
     }
 
     public void skip() {
@@ -40,15 +55,20 @@ public class Playlist {
         for (ArrayList tracks : trackList) {
             System.out.println(tracks.getSize());
             for (int i = 0; i < tracks.getSize(); i++) {
-                result += trackToString(tracks.getByIndex(i)) + "\n";
+                result += trackToString(tracks.getByIndex(i));
             }
         }
-        return result;
+        try {
+            return result.substring(0, result.length() - 1);
+        } catch (Exception e) {
+            return result;
+        }
+
     }
     public String history() {
         return "";
     }
     private String trackToString(Track track) {
-        return track.getId() + track.getArtist() + track.getTitle() + track.getLength() + track.getPriority();
+        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority() + "\n";
     }
 }
