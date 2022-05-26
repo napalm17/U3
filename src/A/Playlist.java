@@ -3,13 +3,14 @@ package A;
 public class Playlist {
     private Track currentTrack;
     private int size;
-    private ArrayList[] trackList;
+    private TrackList[] trackList;
 
     public Playlist() {
-        this.trackList = new ArrayList[6];
+        this.trackList = new TrackList[6];
         for (int i = 0; i < trackList.length; i++) {
-            trackList[i] = new ArrayList();
+            trackList[i] = new TrackList();
         }
+        this.currentTrack = null;
         this.size = 0;
     }
 
@@ -21,41 +22,56 @@ public class Playlist {
     }
 
     public int remove(int id) {
-        for (ArrayList tracks : trackList) {
+        int totalRemoved = 0;
+        for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
                 if (tracks.getByIndex(i).getId() == id) {
-                    tracks.remove(id);
-                    System.out.println("removed");
+                    totalRemoved += tracks.remove(id);
                     break;
                 }
             }
         }
-        return 0;
+        return totalRemoved;
     }
 
     public void play(int length) {
-        for (ArrayList tracks : trackList) {
+        boolean hasStopped = false;
+        if (this.currentTrack == null) {
+            this.setCurrentTrack();
+        }
+        for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
-                    break;
+                if (tracks.getByIndex(i) == this.currentTrack) {
+                    if (length < this.currentTrack.getRemaining()) {
+                        this.currentTrack.setRemaining(this.currentTrack.getRemaining() - length);
+                        hasStopped = true;
+                        break;
+                    } else {
+                        System.out.println("new");
+                        length -= this.currentTrack.getRemaining();
+                        this.setCurrentTrack();
+
+                    }
                 }
+            }
+            if (hasStopped) {
+                break;
             }
         }
     }
-
     public void skip() {
-
+        remove(this.currentTrack.getId());
     }
 
     public String peek() {
-        return "";
+        return trackToString(this.currentTrack) + ":" + this.currentTrack.getRemaining();
     }
 
     public String list() {
         String result = "";
-        for (ArrayList tracks : trackList) {
-            System.out.println(tracks.getSize());
+        for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
-                result += trackToString(tracks.getByIndex(i));
+                result += trackToString(tracks.getByIndex(i)) + "\n";
             }
         }
         try {
@@ -68,7 +84,33 @@ public class Playlist {
     public String history() {
         return "";
     }
+    private void setCurrentTrack() {
+        if (this.currentTrack == null) {
+            for (TrackList tracks : trackList) {
+                if (tracks.getSize() > 0) {
+                    this.currentTrack = tracks.getByIndex(0);
+                    break;
+                }
+            }
+        }
+        else {
+            boolean isNewCurrentTrack = false;
+            for (TrackList tracks : trackList) {
+                for (int i = 0; i < tracks.getSize(); i++) {
+                    if (isNewCurrentTrack) {
+                        System.out.println("found it");
+                        this.currentTrack = tracks.getByIndex(i);
+                        break;
+                    }
+                    if (tracks.getByIndex(i) == this.currentTrack) {
+                        System.out.println("found it");
+                        isNewCurrentTrack = true;
+                    }
+                }
+            }
+        }
+    }
     private String trackToString(Track track) {
-        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority() + "\n";
+        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority();
     }
 }

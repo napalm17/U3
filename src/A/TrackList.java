@@ -1,6 +1,6 @@
 package A;
 
-class ArrayList {
+class TrackList {
     private int size;
     private class ListCell {
         Track content;
@@ -12,7 +12,7 @@ class ArrayList {
     }
     private ListCell head;
 
-    public ArrayList() {
+    public TrackList() {
         this.size = 0;
         this.head = null; // empty list
     }
@@ -46,23 +46,25 @@ class ArrayList {
         return c.content;
     }
     public int remove(int id) {
+        int removed = 0;
         ListCell c = this.head;
         while (c != null && c.content.getId() == id) {
             this.head = c = c.next;
-            this.size--;
+            removed++;
         }
         if (c == null) {
-            return 0; // nothing more to do
+            return removed; // nothing more to do
         }
         while (c.next != null) {
             if (c.next.content.getId() == id) {
                 c.next = c.next.next;
-                this.size--;
+                removed++;
             } else {
                 c = c.next;
             }
         }
-        return 0;
+        this.size -= removed;
+        return removed;
     }
     public int getSize() {
         return this.size;

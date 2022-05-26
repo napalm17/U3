@@ -5,6 +5,7 @@ public class Track {
     private String artist;
     private String title;
     private int length;
+    private int remaining;
     private int priority;
 
     public Track(int id, String artist, String title, int length, int priority) {
@@ -13,6 +14,7 @@ public class Track {
         this.title = title;
         this.length = length;
         this.priority = priority;
+        this.remaining = length;
     }
 
     public int getId() {
@@ -31,8 +33,12 @@ public class Track {
         return length;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public int getRemaining() {
+        return remaining;
+    }
+
+    public void setRemaining(int remaining) {
+        this.remaining = remaining;
     }
 
     public int getPriority() {
