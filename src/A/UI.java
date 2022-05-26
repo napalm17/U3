@@ -1,15 +1,12 @@
 package A;
-
 import java.util.Scanner;
 
 public class UI {
     private final String QUIT = "quit";
     public void run() {
         Scanner scanner = new Scanner(System.in);
-
+        Playlist playlist = new Playlist();
         while (true) {
-
-            Playlist playlist = new Playlist();
             String input = scanner.nextLine();
             String[] params = input.split(" ");
             if (params[0].equals(QUIT)) {
@@ -17,8 +14,9 @@ public class UI {
             }
             switch (params[0]) {
                 case "add":
-                    playlist.add(Integer.parseInt(params[1]), params[2], params[3],
-                            Integer.parseInt(params[4]), Integer.parseInt(params[5]));
+                    params = params[1].split(":");
+                    playlist.add(Integer.parseInt(params[0]), params[1], params[2],
+                            Integer.parseInt(params[3]), Integer.parseInt(params[4]));
                     break;
                 case "remove":
                     playlist.remove(Integer.parseInt(params[1]));
@@ -33,7 +31,7 @@ public class UI {
                     playlist.peek();
                     break;
                 case "list":
-                    playlist.list();
+                    System.out.println(playlist.list());
                     break;
                 case "history":
                     playlist.history();
