@@ -19,7 +19,7 @@ public class UI {
                             Integer.parseInt(params[3]), Integer.parseInt(params[4]));
                     break;
                 case "remove":
-                    playlist.remove(Integer.parseInt(params[1]));
+                    System.out.println(playlist.remove(Integer.parseInt(params[1])));
                     break;
                 case "play":
                     playlist.play(Integer.parseInt(params[1]));
@@ -28,7 +28,7 @@ public class UI {
                     playlist.skip();
                     break;
                 case "peek":
-                    playlist.peek();
+                    System.out.println(playlist.peek());
                     break;
                 case "list":
                     System.out.println(playlist.list());

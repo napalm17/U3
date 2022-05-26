@@ -3,12 +3,12 @@ package A;
 public class Playlist {
     private Track currentTrack;
     private int size;
-    private ArrayList[] trackList;
+    private TrackList[] trackList;
 
     public Playlist() {
-        this.trackList = new ArrayList[6];
+        this.trackList = new TrackList[6];
         for (int i = 0; i < trackList.length; i++) {
-            trackList[i] = new ArrayList();
+            trackList[i] = new TrackList();
         }
         this.size = 0;
     }
@@ -21,41 +21,54 @@ public class Playlist {
     }
 
     public int remove(int id) {
-        for (ArrayList tracks : trackList) {
+        int totalRemoved = 0;
+        for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
                 if (tracks.getByIndex(i).getId() == id) {
-                    tracks.remove(id);
-                    System.out.println("removed");
+                    totalRemoved += tracks.remove(id);
                     break;
                 }
             }
         }
-        return 0;
+        return totalRemoved;
     }
 
     public void play(int length) {
-        for (ArrayList tracks : trackList) {
+        boolean hasStopped = false;
+        for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
-                    break;
-                }
+                    this.currentTrack = tracks.getByIndex(i);
+                    if (length < this.currentTrack.getLength()) {
+                        this.currentTrack.setRemaining(this.currentTrack.getRemaining() - length);
+                        hasStopped = true;
+                        break;
+                    }
+                    else {
+                        length -= this.currentTrack.getLength();
+                    }
+            }
+            if (hasStopped) {
+                break;
             }
         }
     }
 
     public void skip() {
+        remove(this.currentTrack.getId());
+        this.currentTrack = this.cur
 
     }
 
     public String peek() {
-        return "";
+        return trackToString(this.currentTrack) + ":" + this.currentTrack.getRemaining();
     }
 
     public String list() {
         String result = "";
-        for (ArrayList tracks : trackList) {
+        for (TrackList tracks : trackList) {
             System.out.println(tracks.getSize());
             for (int i = 0; i < tracks.getSize(); i++) {
-                result += trackToString(tracks.getByIndex(i));
+                result += trackToString(tracks.getByIndex(i)) + "\n";
             }
         }
         try {
@@ -69,6 +82,6 @@ public class Playlist {
         return "";
     }
     private String trackToString(Track track) {
-        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority() + "\n";
+        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority();
     }
 }
