@@ -26,7 +26,7 @@ public class Playlist {
         for (TrackList tracks : trackList) {
             for (int i = 0; i < tracks.getSize(); i++) {
                 if (tracks.getByIndex(i).getId() == id) {
-                    totalRemoved += tracks.remove(id);
+                    totalRemoved += tracks.removeById(id, true);
                     break;
                 }
             }
@@ -61,6 +61,7 @@ public class Playlist {
     }
     public void skip() {
         remove(this.currentTrack.getId());
+        this.setCurrentTrack();
     }
 
     public String peek() {
@@ -84,12 +85,12 @@ public class Playlist {
     public String history() {
         return "";
     }
-    private void setCurrentTrack() {
+    private Track setCurrentTrack() {
         if (this.currentTrack == null) {
             for (TrackList tracks : trackList) {
                 if (tracks.getSize() > 0) {
                     this.currentTrack = tracks.getByIndex(0);
-                    break;
+                    return this.currentTrack;
                 }
             }
         }
@@ -100,7 +101,7 @@ public class Playlist {
                     if (isNewCurrentTrack) {
                         System.out.println("found it");
                         this.currentTrack = tracks.getByIndex(i);
-                        break;
+                        return this.currentTrack;
                     }
                     if (tracks.getByIndex(i) == this.currentTrack) {
                         System.out.println("found it");
@@ -109,6 +110,7 @@ public class Playlist {
                 }
             }
         }
+        return null;
     }
     private String trackToString(Track track) {
         return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority();

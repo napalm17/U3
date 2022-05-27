@@ -45,7 +45,7 @@ class TrackList {
         }
         return c.content;
     }
-    public int remove(int id) {
+    public int removeById(int id, boolean allInstances) {
         int removed = 0;
         ListCell c = this.head;
         while (c != null && c.content.getId() == id) {

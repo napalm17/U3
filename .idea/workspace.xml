@@ -4,8 +4,7 @@
     <list default="true" id="cee4f96c-2b9b-4bfb-8b52-fc81615fe39d" name="Changes" comment="msg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/A/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/A/TrackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/TrackList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
