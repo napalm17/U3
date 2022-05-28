@@ -2,13 +2,13 @@ package A;
 import java.util.Scanner;
 
 public class UI {
-    private final String QUIT = "quit";
     public void run() {
         Scanner scanner = new Scanner(System.in);
         Playlist playlist = new Playlist();
         while (true) {
             String input = scanner.nextLine();
             String[] params = input.split(" ");
+            String QUIT = "quit";
             if (params[0].equals(QUIT)) {
                 break;
             }
@@ -19,7 +19,7 @@ public class UI {
                             Integer.parseInt(params[3]), Integer.parseInt(params[4]));
                     break;
                 case "remove":
-                    System.out.println(playlist.remove(Integer.parseInt(params[1])));
+                    System.out.print(playlist.remove(Integer.parseInt(params[1]), true));
                     break;
                 case "play":
                     playlist.play(Integer.parseInt(params[1]));
@@ -28,13 +28,13 @@ public class UI {
                     playlist.skip();
                     break;
                 case "peek":
-                    System.out.println(playlist.peek());
+                    System.out.print(playlist.peek());
                     break;
                 case "list":
-                    System.out.println(playlist.list());
+                    System.out.print(playlist.list());
                     break;
                 case "history":
-                    playlist.history();
+                    System.out.print(playlist.history());
                     break;
             }
         }

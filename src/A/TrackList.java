@@ -17,9 +17,6 @@ class TrackList {
         this.head = null; // empty list
     }
 
-    public void addFirst(Track track) {
-        this.head = new ListCell(track, this.head);
-    }
     public void addLast(Track track) {
         this.size ++;
         if (this.head == null) {
@@ -45,25 +42,36 @@ class TrackList {
         }
         return c.content;
     }
+
     public int removeById(int id, boolean allInstances) {
         int removed = 0;
         ListCell c = this.head;
         while (c != null && c.content.getId() == id) {
             this.head = c = c.next;
+            if (!allInstances) {
+                this.size -= 1;
+                return 0;
+            }
             removed++;
         }
         if (c == null) {
+            this.size -= removed;
             return removed; // nothing more to do
         }
         while (c.next != null) {
             if (c.next.content.getId() == id) {
                 c.next = c.next.next;
                 removed++;
+                if (!allInstances) {
+                    this.size -= 1;
+                    return 0;
+                }
             } else {
                 c = c.next;
             }
         }
         this.size -= removed;
+        System.out.println(size + "size");
         return removed;
     }
     public int getSize() {
