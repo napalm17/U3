@@ -111,6 +111,6 @@ public class Simulator {
     }
 
     private String trackToString(Track track) {
-        return track.getId() + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority();
+        return String.format("%05d", track.getId()) + ":" + track.getArtist() + ":" + track.getTitle() + ":" + track.getLength() + ":" + track.getPriority();
     }
 }

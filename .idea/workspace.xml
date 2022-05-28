@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cee4f96c-2b9b-4bfb-8b52-fc81615fe39d" name="Changes" comment="msg">
-      <change beforePath="$PROJECT_DIR$/src/A/DoubleLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Simulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/A/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Simulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653699410721</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="msg">
+      <created>1653699679826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653699679826</updated>
+    </task>
+    <task id="LOCAL-00008" summary="msg">
+      <created>1653699977177</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653699977177</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
