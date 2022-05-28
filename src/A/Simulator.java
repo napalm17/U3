@@ -72,7 +72,7 @@ public class Simulator {
                 return "";
             }
         }
-        return trackToString(this.currentTrack) + ":" + this.currentTrack.getRemaining() + "\n";
+        return this.trackToString(this.currentTrack) + ":" + this.currentTrack.getRemaining() + "\n";
     }
 
     public String list() {
