@@ -1,10 +1,10 @@
 package A;
 import java.util.Scanner;
 
-public class UI {
+public class UserInterface {
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        Playlist playlist = new Playlist();
+        Simulator playlist = new Simulator();
         while (true) {
             String input = scanner.nextLine();
             String[] params = input.split(" ");

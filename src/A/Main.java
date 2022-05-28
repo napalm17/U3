@@ -2,7 +2,7 @@ package A;
 
 public class Main {
     public static void main(String[] args) {
-        UI ui = new UI();
+        UserInterface ui = new UserInterface();
         ui.run();
     }
 }

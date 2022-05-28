@@ -1,12 +1,12 @@
 package A;
 
-public class Playlist {
+public class Simulator {
 
     private Track currentTrack;
     private final TrackList[] trackList;
     private final TrackList playedTracks;
 
-    public Playlist() {
+    public Simulator() {
         this.playedTracks = new TrackList();
         this.trackList = new TrackList[6];
         for (int i = 0; i < trackList.length; i++) {
