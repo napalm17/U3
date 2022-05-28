@@ -1,7 +1,6 @@
 package A;
 
 public class Simulator {
-
     private Track currentTrack;
     private final TrackList[] trackList;
     private final TrackList playedTracks;
@@ -44,9 +43,6 @@ public class Simulator {
     }
 
     public void play(int length) {
-        if (this.currentTrack == null) {
-            this.setCurrentTrack();
-        }
         for (TrackList tracks : trackList) {
             while(tracks.getSize() != 0) {
                 if (length < this.currentTrack.getRemaining()) {
@@ -64,7 +60,7 @@ public class Simulator {
         if (this.currentTrack == null) {
             return;
         }
-        remove(this.currentTrack.getId(), false);
+        this.remove(this.currentTrack.getId(), false);
         this.currentTrack = null;
         this.setCurrentTrack();
     }
