@@ -48,10 +48,9 @@ public class Simulator {
                 if (length < this.currentTrack.getRemaining()) {
                     this.currentTrack.setRemaining(this.currentTrack.getRemaining() - length);
                     return;
-                } else {
-                    length -= this.currentTrack.getRemaining();
-                    this.transitionNewTrack();
                 }
+                length -= this.currentTrack.getRemaining();
+                this.transitionNewTrack();
             }
         }
 
