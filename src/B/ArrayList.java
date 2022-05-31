@@ -18,8 +18,8 @@ class ArrayList {
     public boolean contains(int i) {
         ListCell cell = this.head;
         while (cell != null) {
-            for (int element : cell.content) {
-                if (element == i) {
+            for (int planetId : cell.content) {
+                if (planetId == i) {
                     return true;
                 }
             }

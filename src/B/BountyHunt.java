@@ -33,7 +33,7 @@ public class BountyHunt {
         }
     }
     private String[] textToStringArray() throws IOException {
-        return Files.readAllLines(Paths.get(pathToFile)).toArray(new String[0]);
+        return Files.readAllLines(Paths.get(this.pathToFile)).toArray(new String[0]);
 
     }
     private int[] stringToIntArray(String line) {
