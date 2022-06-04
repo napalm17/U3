@@ -67,35 +67,42 @@ class TrackList {
         return c.content;
     }
 
+    /**
+     * Removes the track(s) with the given id from the priority queue. Inspired from the example in the lecture material.
+     * @param id the id of the track(s).
+     * @param allInstances if true then every track with the given id will be removed,
+     *                     if false only the first track on the priority queue will be removed
+     * @return the track object with the given id.
+     */
     public int removeById(int id, boolean allInstances) {
-        int removed = 0;
+        int removed = 0; // Counter for the number of removed tracks
         ListCell c = this.head;
-        while (c != null && c.content.getId() == id) {
+        while (c != null && c.content.getId() == id) { //if the track is at the beginning of the playlist, apply this.
             this.head = c = c.next;
-            if (!allInstances) {
+            if (!allInstances) { // If we are removing a single track, then we stop the loop.
                 this.size -= 1;
-                return 0;
+                return 1;
             }
             removed++;
         }
-        if (c == null) {
+        if (c == null) { // If we reach the end of the play list, stop.
             this.size -= removed;
             return removed;
         }
+
         while (c.next != null) {
             if (c.next.content.getId() == id) {
                 c.next = c.next.next;
                 removed++;
-                if (!allInstances) {
+                if (!allInstances) { // If we are removing a single track, then we stop the loop.
                     this.size -= 1;
-                    return 0;
+                    return 1;
                 }
             } else {
                 c = c.next;
             }
         }
-        this.size -= removed;
-        System.out.println(size + "size");
+        this.size -= removed; // Readjust the size of the tracklist.
         return removed;
     }
 
