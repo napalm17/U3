@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cee4f96c-2b9b-4bfb-8b52-fc81615fe39d" name="Changes" comment="msg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Simulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/B/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/B/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/B/BountyHunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/B/BountyHunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/A/TrackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/TrackList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653498989624</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="msg">
+      <created>1654002169556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654002169556</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
