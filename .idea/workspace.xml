@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cee4f96c-2b9b-4bfb-8b52-fc81615fe39d" name="Changes" comment="msg">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2022_19_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_05_2022_19_19__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2022_21_10_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_05_2022_21_10__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/B/FileHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/A/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/Simulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/A/TrackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A/TrackList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/B/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/B/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/B/BountyHunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/B/BountyHunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/B/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/B/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <recent name="A" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.B.Main">
     <configuration name="B.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="B.Main" />
       <module name="U3" />
@@ -82,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.B.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653736450769</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="msg">
+      <created>1654366311854</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654366311854</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

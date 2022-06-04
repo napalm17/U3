@@ -1,7 +1,7 @@
 package A;
 
 /**
- * Models a single linked list with music tracks as its elements and these as its attributes:
+ * Models a single linked list with music tracks as its elements.
  * @author ugpsy
  * @version 1.0
  */
@@ -34,7 +34,7 @@ class TrackList {
     }
 
     /**
-     * Adds a nw track to the end of the list.
+     * Adds a new track to the end of the list.
      */
     public void addLast(Track track) {
         this.size ++; // Increment the size of the list by one.
