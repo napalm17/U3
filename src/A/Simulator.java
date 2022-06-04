@@ -10,7 +10,7 @@ package A;
 public class Simulator {
     private Track currentTrack; // The current track on the playlist which is on the top of the priority queue.
     private final TrackList[] trackListArray; // An array that will contain 6 track lists with each of them containing tracks
-                                         // with a common priority from 0 to 5.
+    // with a common priority from 0 to 5.
     private final TrackList playedTracks; // A list of all the previously played songs.
 
     /**
@@ -39,7 +39,7 @@ public class Simulator {
     public void add(int id, String artist, String title, int length, int priority) {
         Track track = new Track(id, artist, title, length, priority); // Create a new track object with the given attributes.
         trackListArray[priority].addLast(track); // Add the track object to the track list at index n
-                                                 // in the trackListArray when the track has priority n.
+        // in the trackListArray when the track has priority n.
         this.setCurrentTrack(); // Set the new current track.
     }
 
@@ -62,7 +62,7 @@ public class Simulator {
                     totalRemoved += tracks.removeById(id, allInstances); // Increments by the amount of tracks removed.
                     if (!allInstances) {
                         return null; // Stops the outer loop through track list array if we are not removing all tracks
-                                     // with the given id but only a single one.
+                        // with the given id but only a single one.
                     }
                     break;
                 }
@@ -82,17 +82,17 @@ public class Simulator {
         for (TrackList tracks : trackListArray) {
             while(tracks.getSize() != 0) { // Find a track list that is not empty.
                 if (length < this.currentTrack.getRemaining()) { // If the given playing length is shorter
-                                                                 // than the remaining duration of the current track,
-                                                                 // subtract the given length from the remaining portion
-                                                                 // of the current track.
+                    // than the remaining duration of the current track,
+                    // subtract the given length from the remaining portion
+                    // of the current track.
                     this.currentTrack.setRemaining(this.currentTrack.getRemaining() - length);
                     return; // Stop the loop.
                 }
                 length -= this.currentTrack.getRemaining(); // If the given playing length is longer
-                                                            // than the remaining duration of the current track,
-                                                            // subtract  remaining portion of the current track
-                                                            // from the given length and transition to the next song.
-                                                            // Continue this until the if condition above is met.
+                // than the remaining duration of the current track,
+                // subtract  remaining portion of the current track
+                // from the given length and transition to the next song.
+                // Continue this until the if condition above is met.
                 this.transitionNewTrack();
             }
         }
@@ -107,8 +107,8 @@ public class Simulator {
             return;
         }
         this.remove(this.currentTrack.getId(), false); // Removes the current track from the priority queue
-                                                                 // This time the parameter allInstances is set to false
-                                                                 // because we only want to remove a single track from the playlist.
+        // This time the parameter allInstances is set to false
+        // because we only want to remove a single track from the playlist.
         this.currentTrack = null;
         this.setCurrentTrack(); // Set a new current track.
     }
@@ -121,7 +121,7 @@ public class Simulator {
         if (this.currentTrack == null) { // If we have no current track, then set one
             this.setCurrentTrack();
             if (this.currentTrack == null) { // If we still have no current track, our playlist must be empty,
-                                             // so return empty string.
+                // so return empty string.
                 return "";
             }
         }
@@ -138,7 +138,7 @@ public class Simulator {
         for (TrackList tracks : trackListArray) { // Go through the priority queue to access every track.
             for (int i = 0; i < tracks.getSize(); i++) {
                 result += trackToString(tracks.getByIndex(i)) + "\n"; // Convert the attributes into a string and separate
-                                                                      // them by \n.
+                // them by \n.
             }
         }
         return result;
